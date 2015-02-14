@@ -17,6 +17,8 @@ main_page_head = '''
         body {
             padding-top: 80px;
             background-image: url("http://www.augustg.com/images/movie-home-theater-background.jpg");
+            color: black;
+            font-family: "Calibri", "Arial";
         }
         #trailer .modal-dialog {
             margin-top: 200px;
@@ -38,7 +40,7 @@ main_page_head = '''
             padding-top: 20px;
         }
         .movie-tile:hover {
-            background-color: #EEE;
+            background-color: rgba(227, 227, 227, 0.5);
             cursor: pointer;
         }
         .scale-media {
@@ -53,6 +55,20 @@ main_page_head = '''
             left: 0;
             top: 0;
             background-color: white;
+        }
+
+        #info {
+            background-color: rgba(199, 199, 199, 0.5);
+        }
+
+        #info:hover {
+            background-color: none;
+        }
+
+        footer {
+          text-align: center;
+          color: white;
+          font-style: bold;
         }
 
     </style>
@@ -123,10 +139,20 @@ main_page_content = '''
 movie_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
-    <h2>{movie_title} ({movie_year})</h2>
-    <h3>Directed by: {movie_director}</h3>
-    <h4>{movie_storyline}</h4>
+    <div id="info">
+      <h2>{movie_title} ({movie_year})</h2>
+      <h3>Directed by: {movie_director}</h3>
+      <h4>{movie_storyline}</h4>
+    </div>
 </div>
+'''
+
+# Include a footer
+movie_page_footer = '''
+<footer class="col-md-12">
+  <p>Created by CJ Tully, 2015</p>
+  <p>As part of the <a href="https://www.udacity.com/course/nd004">Udacity Full Stack Web Developer Nanodegree program</a></p>
+</footer>
 '''
 
 def create_movie_tiles_content(movies):
@@ -157,7 +183,7 @@ def open_movies_page(movies):
   rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(movies))
 
   # Output the file
-  output_file.write(main_page_head + rendered_content)
+  output_file.write(main_page_head + rendered_content + movie_page_footer)
   output_file.close()
 
   # open the output file in the browser
