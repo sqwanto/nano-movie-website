@@ -16,6 +16,7 @@ main_page_head = '''
     <style type="text/css" media="screen">
         body {
             padding-top: 80px;
+            background-image: url("http://www.augustg.com/images/movie-home-theater-background.jpg");
         }
         #trailer .modal-dialog {
             margin-top: 200px;
@@ -141,8 +142,8 @@ def create_movie_tiles_content(movies):
         content += movie_tile_content.format(
             movie_title=movie.title,
             movie_year=movie.year,
-            movie_director=movie.director,
             movie_storyline=movie.storyline,
+            movie_director=movie.director,
             poster_image_url=movie.poster_image_url,
             trailer_youtube_id=trailer_youtube_id
         )

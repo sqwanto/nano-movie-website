@@ -4,10 +4,10 @@ import webbrowser
 class Movie():
 
     #define constructor and instance variables
-    def __init__(self, movie_title, year, movie_storyline, director, poster_image, trailer_youtube):
+    def __init__(self, movie_title, year, storyline, director, poster_image, trailer_youtube):
         self.title = movie_title
         self.year = year
-        self.storyline = movie_storyline
+        self.storyline = storyline
         self.director = director
         self.poster_image_url = poster_image
         self.trailer_youtube_url = trailer_youtube
