@@ -57,6 +57,8 @@ main_page_head = '''
             background-color: white;
         }
 
+        /* personal CSS for the information boxes & footer */
+
         #info {
             background-color: rgba(199, 199, 199, 0.5);
         }
@@ -139,6 +141,9 @@ main_page_content = '''
 movie_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
+
+    <!-- Movie information section -->
+    
     <div id="info">
       <h2>{movie_title} ({movie_year})</h2>
       <h3>Directed by: {movie_director}</h3>
@@ -147,7 +152,7 @@ movie_tile_content = '''
 </div>
 '''
 
-# Include a footer
+# Include a footer w/ basic info
 movie_page_footer = '''
 <footer class="col-md-12">
   <p>Created by CJ Tully, 2015</p>
